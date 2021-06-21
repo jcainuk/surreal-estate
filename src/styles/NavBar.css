@@ -1,4 +1,35 @@
 .navbar {
-  background-color: white;
-  border-bottom: grey;
+  background: rgb(255, 255, 255);
+  height: 80px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+
+}
+img {
+  height: 65px;
+  justify-self: start;
+  margin-left: 0px; 
+}
+.navbar-links {
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  grid-gap: 20px;
+  list-style: none;
+  text-align: center;
+  width: 70vw;
+  justify-content: start;
+  margin-right: 2rem;
+}
+.navbar-links-item{
+  color: rgb(55, 52, 52);
+  font-size: 16px;
+  padding: 10px;
+  text-decoration: none;
+}
+.navbar-links-item:hover{
+  background-color: rgba(223, 223, 223, 0.782);
+  border-radius: 4px;
+  transition: all 0.2s ease out;
 }
