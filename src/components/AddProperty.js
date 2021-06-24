@@ -8,7 +8,7 @@ const AddProperty = () => {
       city: "Manchester",
       type: "",
       bathrooms: "",
-      bedroom: "",
+      bedrooms: "",
       email: "",
       price: "",
     },
@@ -75,13 +75,29 @@ const AddProperty = () => {
             placeholder="Number of bathrooms"
             id="bathroom"
             name="bathroom"
-            value={fields.bathroom}
+            value={fields.bathrooms}
             onChange={handleFieldChange}
           >
             <option value="1 Bathroom">1 Bathroom</option>
             <option value="2 Bathroom">2 Bathroom</option>
             <option value="3 Bathroom">3 Bathroom</option>
             <option value="4 Bathroom">4 Bathroom</option>
+          </select>
+        </label>
+        <label htmlFor="bedrooms">
+          <select
+            placeholder="Number of bedrooms"
+            id="bedrooms"
+            name="bedroom"
+            value={fields.bedrooms}
+            onChange={handleFieldChange}
+          >
+            <option value="1 Bedrooms">1 Bedroom</option>
+            <option value="2 Bedrooms">2 Bedrooms</option>
+            <option value="3 Bedrooms">3 Bedrooms</option>
+            <option value="4 Bedrooms">4 Bedrooms</option>
+            <option value="5 Bedrooms">5 Bedrooms</option>
+            <option value="6 Bedrooms">6 Bedrooms</option>
           </select>
         </label>
         <button type="submit">Add</button>
