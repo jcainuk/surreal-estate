@@ -7,7 +7,7 @@ const AddProperty = () => {
       title: "",
     },
   };
-  const [fields, setFields] = useState(initialState.fields);
+  const [fields /* setFields */] = useState(initialState.fields);
 
   const handleAddProperty = (event) => {
     event.preventDefault();
