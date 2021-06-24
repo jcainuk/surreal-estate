@@ -85,6 +85,7 @@ const AddProperty = () => {
           </select>
         </label>
         <label htmlFor="bedrooms">
+          Bedrooms
           <select
             placeholder="Number of bedrooms"
             id="bedrooms"
@@ -99,6 +100,17 @@ const AddProperty = () => {
             <option value="5 Bedrooms">5 Bedrooms</option>
             <option value="6 Bedrooms">6 Bedrooms</option>
           </select>
+        </label>
+        <label htmlFor="email">
+          E-mail
+          <input
+            type="email"
+            placeholder="Enter your email address"
+            id="email"
+            name="email"
+            value={fields.email}
+            onChange={handleFieldChange}
+          />
         </label>
         <button type="submit">Add</button>
       </form>
