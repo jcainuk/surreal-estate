@@ -11,7 +11,7 @@ function App() {
       <NavBar />
       <Switch>
         <Route exact path="/" component={Properties} />
-        <Route exact path="/" component={AddProperty} />
+        <Route exact path="/AddProperty" component={AddProperty} />
       </Switch>
     </div>
   );

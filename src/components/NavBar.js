@@ -14,8 +14,7 @@ const NavBar = () => {
           </Link>
         </li>
         <li>
-          {" "}
-          <Link className="navbar-links-item" to="/">
+          <Link className="navbar-links-item" to="/AddProperty">
             Add a Property
           </Link>
         </li>
