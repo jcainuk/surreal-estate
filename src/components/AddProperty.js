@@ -7,11 +7,15 @@ const AddProperty = () => {
       title: "",
     },
   };
-  const [fields setFields ] = useState(initialState.fields);
+  const [fields, setFields] = useState(initialState.fields);
 
   const handleAddProperty = (event) => {
     event.preventDefault();
     console.log(fields);
+  };
+
+  const handleFieldChange = (event) => {
+    setFields({ ...fields, [event.target.name]: event.target.value });
   };
 
   return (
