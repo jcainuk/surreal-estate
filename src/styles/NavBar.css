@@ -7,8 +7,9 @@
   font-size: 1.2rem;
 
 }
-img {
-  height: 65px;
+.logo {
+  max-width: 100%;
+   height: 65px;
   justify-self: start;
   margin-left: 0px; 
 }

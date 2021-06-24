@@ -25,13 +25,14 @@ const AddProperty = () => {
   };
 
   return (
-    <div className="AddProperty">
-      Add Property:
+    <div>
+      <h1>Add Property</h1>
       <form onSubmit={handleAddProperty}>
         <label htmlFor="title">
           Title
           <input
             required
+            type="text"
             id="title"
             name="title"
             value={fields.title}
@@ -130,7 +131,9 @@ const AddProperty = () => {
             min="0"
           />
         </label>
-        <button type="submit">Add</button>
+        <button className="add-property-button" type="submit">
+          Add
+        </button>
       </form>
     </div>
   );
