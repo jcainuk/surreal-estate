@@ -7,7 +7,7 @@ const AddProperty = () => {
       title: "",
     },
   };
-  const [fields /* setFields */] = useState(initialState.fields);
+  const [fields setFields ] = useState(initialState.fields);
 
   const handleAddProperty = (event) => {
     event.preventDefault();
@@ -18,6 +18,15 @@ const AddProperty = () => {
     <div className="AddProperty">
       Add Property:
       <form onSubmit={handleAddProperty}>
+        <label htmlFor="title">
+          Title
+          <input
+            id="title"
+            name="title"
+            value={fields.title}
+            onChange={handleFieldChange}
+          />
+        </label>
         <button type="submit">Add</button>
       </form>
     </div>
