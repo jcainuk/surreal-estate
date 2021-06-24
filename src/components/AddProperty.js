@@ -6,6 +6,11 @@ const AddProperty = () => {
     fields: {
       title: "",
       city: "Manchester",
+      type: "",
+      bathrooms: "",
+      bedroom: "",
+      email: "",
+      price: "",
     },
   };
   const [fields, setFields] = useState(initialState.fields);
