@@ -9,6 +9,11 @@ const AddProperty = () => {
   };
   const [fields, setFields] = useState(initialState.fields);
 
+  const handleAddProperty = (event) => {
+    event.preventDefault();
+    console.log(fields);
+  };
+
   return (
     <div className="AddProperty">
       Add Property:
