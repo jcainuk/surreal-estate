@@ -8,8 +8,17 @@ const NavBar = () => {
     <div className="navbar">
       <img src={logo} alt="surreal-estate-logo" />
       <ul className="navbar-links">
-        <li className="navbar-links-item">View Properties</li>
-        <li className="navbar-links-item">Add a Property</li>
+        <li>
+          <Link className="navbar-links-item" to="/">
+            View Properties
+          </Link>
+        </li>
+        <li>
+          {" "}
+          <Link className="navbar-links-item" to="/">
+            Add a Property
+          </Link>
+        </li>
       </ul>
     </div>
   );
