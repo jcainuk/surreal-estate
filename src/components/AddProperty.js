@@ -69,6 +69,21 @@ const AddProperty = () => {
             <option value="Bungalow">Bungalow</option>
           </select>
         </label>
+        <label htmlFor="bathroom">
+          Bathrooms
+          <select
+            placeholder="Number of bathrooms"
+            id="bathroom"
+            name="bathroom"
+            value={fields.bathroom}
+            onChange={handleFieldChange}
+          >
+            <option value="1 Bathroom">1 Bathroom</option>
+            <option value="2 Bathroom">2 Bathroom</option>
+            <option value="3 Bathroom">3 Bathroom</option>
+            <option value="4 Bathroom">4 Bathroom</option>
+          </select>
+        </label>
         <button type="submit">Add</button>
       </form>
     </div>
