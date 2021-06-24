@@ -73,8 +73,8 @@ const AddProperty = () => {
           Bathrooms
           <select
             placeholder="Number of bathrooms"
-            id="bathroom"
-            name="bathroom"
+            id="bathrooms"
+            name="bathrooms"
             value={fields.bathrooms}
             onChange={handleFieldChange}
           >
@@ -89,7 +89,7 @@ const AddProperty = () => {
           <select
             placeholder="Number of bedrooms"
             id="bedrooms"
-            name="bedroom"
+            name="bedrooms"
             value={fields.bedrooms}
             onChange={handleFieldChange}
           >
