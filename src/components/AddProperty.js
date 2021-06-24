@@ -51,6 +51,24 @@ const AddProperty = () => {
             <option value="Liverpool">Liverpool</option>
           </select>
         </label>
+        <label htmlFor="type">
+          Type
+          <select
+            placeholder="Type of property"
+            id="type"
+            name="type"
+            value={fields.type}
+            onChange={handleFieldChange}
+          >
+            <option value="Flat">Flat</option>
+            <option value="Detached">Detached</option>
+            <option value="Semi-Detached">Semi-Detached</option>
+            <option value="Terraced">Terraced</option>
+            <option value="End Terraced">End Terraced</option>
+            <option value="Cottage">Cottage</option>
+            <option value="Bungalow">Bungalow</option>
+          </select>
+        </label>
         <button type="submit">Add</button>
       </form>
     </div>
