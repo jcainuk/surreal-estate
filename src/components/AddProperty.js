@@ -31,6 +31,7 @@ const AddProperty = () => {
         <label htmlFor="title">
           Title
           <input
+            required
             id="title"
             name="title"
             value={fields.title}
@@ -40,6 +41,7 @@ const AddProperty = () => {
         <label htmlFor="city">
           City
           <select
+            required
             id="city"
             name="city"
             value={fields.city}
@@ -54,6 +56,7 @@ const AddProperty = () => {
         <label htmlFor="type">
           Type
           <select
+            required
             placeholder="Type of property"
             id="type"
             name="type"
@@ -72,6 +75,7 @@ const AddProperty = () => {
         <label htmlFor="bathroom">
           Bathrooms
           <select
+            required
             placeholder="Number of bathrooms"
             id="bathrooms"
             name="bathrooms"
@@ -87,6 +91,7 @@ const AddProperty = () => {
         <label htmlFor="bedrooms">
           Bedrooms
           <select
+            required
             placeholder="Number of bedrooms"
             id="bedrooms"
             name="bedrooms"
@@ -104,12 +109,25 @@ const AddProperty = () => {
         <label htmlFor="email">
           E-mail
           <input
+            required
             type="email"
             placeholder="Enter your email address"
             id="email"
             name="email"
             value={fields.email}
             onChange={handleFieldChange}
+          />
+        </label>
+        <label htmlFor="price">
+          Price (£)
+          <input
+            required
+            type="number"
+            id="price"
+            name="price"
+            value={fields.price}
+            onChange={handleFieldChange}
+            min="0"
           />
         </label>
         <button type="submit">Add</button>
