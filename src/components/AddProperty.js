@@ -1,5 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles/AddProperty.css";
+
+const initialState = {
+  fields: {
+    title: "",
+  },
+};
+const [fields, setFields] = useState(initialState.fields);
 
 const AddProperty = () => (
   <div className="AddProperty">
