@@ -1,5 +1,5 @@
 import React from "react";
 
-const AddProperty = () => <div>Add Property Page</div>;
+const AddProperty = () => <div className="AddProperty">Add Property Page</div>;
 
 export default AddProperty;
