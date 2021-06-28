@@ -19,7 +19,7 @@ const AddProperty = () => {
   const handleAddProperty = (event) => {
     event.preventDefault();
     axios
-      .post(`http://localhost:3000/api/v1/PropertyListing`, fields)
+      .post(`http://localhost:4000/api/v1/PropertyListing`, fields)
       .then((res) => {
         console.log(res);
         console.log(res.data);
