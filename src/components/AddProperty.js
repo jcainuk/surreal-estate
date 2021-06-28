@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import axios from "axios";
 import "../styles/AddProperty.css";
+import axios from "axios";
 
 const AddProperty = () => {
   const initialState = {
@@ -11,24 +11,25 @@ const AddProperty = () => {
       bathrooms: 1,
       bedrooms: 1,
       email: "",
-      price: 0,
+      price: "",
     },
   };
+
   const [fields, setFields] = useState(initialState.fields);
 
   const handleAddProperty = (event) => {
     event.preventDefault();
     axios
       .post(`http://localhost:4000/api/v1/PropertyListing`, fields)
-      .then((res) => {
-        console.log(res);
-        console.log(res.data);
-  });
+      .then(() => {
+        console.log("Property Added");
+      })
+      .catch(() => console.log("Sorry there was an error"));
+  };
 
   const handleFieldChange = (event) => {
     setFields({ ...fields, [event.target.name]: event.target.value });
   };
-
   return (
     <div>
       <h1>Add Property</h1>
@@ -38,6 +39,7 @@ const AddProperty = () => {
           <input
             required
             type="text"
+            placeholder="Enter a title"
             id="title"
             name="title"
             value={fields.title}
@@ -48,6 +50,7 @@ const AddProperty = () => {
           City
           <select
             required
+            placeholder="City/Town"
             id="city"
             name="city"
             value={fields.city}
@@ -78,14 +81,14 @@ const AddProperty = () => {
             <option value="Bungalow">Bungalow</option>
           </select>
         </label>
-        <label htmlFor="bathroom">
+        <label htmlFor="bathrooms">
           Bathrooms
           <select
             required
             placeholder="Number of bathrooms"
-            id="bathrooms"
-            name="bathrooms"
-            value={fields.bathrooms}
+            id="bathroom"
+            name="bathroom"
+            value={fields.bathroom}
             onChange={handleFieldChange}
           >
             <option value="1 Bathroom">1 Bathroom</option>
@@ -100,8 +103,8 @@ const AddProperty = () => {
             required
             placeholder="Number of bedrooms"
             id="bedrooms"
-            name="bedrooms"
-            value={fields.bedrooms}
+            name="bedroom"
+            value={fields.bedroom}
             onChange={handleFieldChange}
           >
             <option value="1 Bedrooms">1 Bedroom</option>
@@ -116,8 +119,8 @@ const AddProperty = () => {
           E-mail
           <input
             required
+            placeholder="Type your email address"
             type="email"
-            placeholder="Enter your email address"
             id="email"
             name="email"
             value={fields.email}
@@ -127,13 +130,13 @@ const AddProperty = () => {
         <label htmlFor="price">
           Price (£)
           <input
-            required
             type="number"
+            required
+            placeholder="Enter the price"
             id="price"
             name="price"
             value={fields.price}
             onChange={handleFieldChange}
-            min="0"
           />
         </label>
         <button className="add-property-button" type="submit">
