@@ -88,7 +88,7 @@ const AddProperty = () => {
             placeholder="Number of bathrooms"
             id="bathroom"
             name="bathroom"
-            value={fields.bathroom}
+            value={fields.bathrooms}
             onChange={handleFieldChange}
           >
             <option value="1 Bathroom">1 Bathroom</option>
@@ -104,7 +104,7 @@ const AddProperty = () => {
             placeholder="Number of bedrooms"
             id="bedrooms"
             name="bedroom"
-            value={fields.bedroom}
+            value={fields.bedrooms}
             onChange={handleFieldChange}
           >
             <option value="1 Bedrooms">1 Bedroom</option>
