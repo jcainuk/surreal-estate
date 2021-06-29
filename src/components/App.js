@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import NavBar from "./NavBar";
 import Properties from "./Properties";
 import AddProperty from "./AddProperty";
-import Alert from "./Alert";
 
 function App() {
   return (
