@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../styles/AddProperty.css";
 import axios from "axios";
+import Alert from "./Alert";
 
 const AddProperty = () => {
   const initialState = {
@@ -13,9 +14,14 @@ const AddProperty = () => {
       email: "",
       price: "",
     },
+    alert: {
+      message: "",
+      isSuccess: false,
+    },
   };
 
   const [fields, setFields] = useState(initialState.fields);
+  const [alert, setAlert] = useState(initialState.alert);
 
   const handleAddProperty = (event) => {
     event.preventDefault();
