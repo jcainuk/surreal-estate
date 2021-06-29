@@ -8,6 +8,6 @@ test("renders surreal estate text", () => {
       <App />
     </BrowserRouter>
   );
-  const linkElement = screen.getByText(/surreal estate/i);
+  const linkElement = screen.getByText(/View Properties/i);
   expect(linkElement).toBeInTheDocument();
 });
