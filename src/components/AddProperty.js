@@ -46,7 +46,7 @@ const AddProperty = () => {
     setFields({ ...fields, [event.target.name]: event.target.value });
   };
   return (
-    <div>
+    <div className="addproperty">
       <h1>Add Property</h1>
       <Alert message={alert.message} success={alert.isSuccess} />
 
