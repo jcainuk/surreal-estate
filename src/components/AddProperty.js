@@ -30,13 +30,13 @@ const AddProperty = () => {
       .post(`http://localhost:4000/api/v1/PropertyListing`, fields)
       .then(() => {
         setAlert({
-          message: "",
+          message: "Property added",
           isSuccess: true,
         });
       })
       .catch(() =>
         setAlert({
-          message: "",
+          message: "Server error. Please contact customer support.",
           isSuccess: false,
         })
       );
@@ -48,7 +48,7 @@ const AddProperty = () => {
   return (
     <div>
       <h1>Add Property</h1>
-      <Alert message={alert.message} success={alert.isSuccess} />
+
       <form onSubmit={handleAddProperty}>
         <label htmlFor="title">
           Title
@@ -159,6 +159,7 @@ const AddProperty = () => {
           Add
         </button>
       </form>
+      <Alert message={alert.message} success={alert.isSuccess} />
     </div>
   );
 };
