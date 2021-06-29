@@ -1,20 +1,29 @@
 import React from "react";
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import Alert from "../../components/Alert";
 
 describe("Alert", () => {
-  test("displays an error message", () => {
-    const { getByText } = render(<Alert message="Error!" />);
-    expect(getByText(/Error/).textContent).toBe("Error!");
+  test("it displays an error message", () => {
+    const { asFragment } = render(
+      <Alert
+        message="Server error. Please contact customer support."
+        isSuccess={false}
+      />
+    );
+    expect(
+      screen.getByText("Server error. Please contact customer support.")
+    ).toBeInTheDocument();
+    expect(asFragment()).toMatchSnapshot();
   });
 
-  test("displays a success message", () => {
-    const { getByText } = render(<Alert message="Success!!!!" success />);
-
-    expect(getByText(/Success/).textContent).toBe("Success!!!!");
+  test("it displays a success message", () => {
+    const { asFragment } = render(<Alert message="Property added" isSuccess />);
+    expect(screen.getByText("Property added")).toBeInTheDocument();
+    expect(asFragment()).toMatchSnapshot();
   });
-  it("does not render if message prop is empty", () => {
-    const { asFragment } = render(<Alert message="" />);
+
+  test("it does not render when there is no alert message", () => {
+    const { asFragment } = render(<Alert message="" isSuccess={false} />);
     const alert = asFragment();
     expect(alert).toMatchSnapshot();
   });
