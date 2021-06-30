@@ -1,32 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import "../styles/PropertyCard.css";
 import { FaBed, FaBath, FaPoundSign, FaMailBulk } from "react-icons/fa";
 
 const PropertyCard = (props) => {
-  const {
-    title,
-    propertyId,
-    city,
-    type,
-    bathrooms,
-    bedrooms,
-    price,
-    email,
-    userID,
-    // onSaveProperty,
-    // onDeleteProperty,
-    myProperties,
-    favouriteId,
-  } = props;
-
-  const [showDelete, setShowDelete] = useState(false);
-
-  useEffect(() => {
-    if (myProperties && userID) {
-      setShowDelete(true);
-    }
-  }, [myProperties]);
+  const { title, city, type, bathrooms, bedrooms, price, email } = props;
 
   return (
     <div className="property-card">
@@ -50,31 +28,8 @@ const PropertyCard = (props) => {
           {email}
         </div>
       </div>
-      {userID && !showDelete && (
-        <button
-          className="card-btn"
-          type="button"
-          // onClick={() => onSaveProperty(propertyId)}
-        >
-          Save
-        </button>
-      )}
-      {showDelete &&
-        myProperties.filter((e) => propertyId === e.propertyListing._id) && (
-          <button
-            className="card-btn"
-            type="button"
-            // onClick={() => onDeleteProperty(favouriteId)}
-          >
-            Delete
-          </button>
-        )}
     </div>
   );
-};
-
-PropertyCard.defaultProps = {
-  myProperties: undefined,
 };
 
 PropertyCard.propTypes = {
@@ -85,12 +40,6 @@ PropertyCard.propTypes = {
   price: PropTypes.number.isRequired,
   city: PropTypes.string.isRequired,
   email: PropTypes.string.isRequired,
-  userID: PropTypes.string.isRequired,
-  // onSaveProperty: PropTypes.func.isRequired,
-  // onDeleteProperty: PropTypes.func.isRequired,
-  propertyId: PropTypes.string.isRequired,
-  myProperties: PropTypes.arrayOf(PropTypes.any),
-  favouriteId: PropTypes.string.isRequired,
 };
 
 export default PropertyCard;
