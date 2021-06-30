@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios";
 import { useLocation } from "react-router-dom";
 import PropTypes from "prop-types";
-import axios from "axios";
 import PropertyCard from "./PropertyCard";
 import Alert from "./Alert";
 import SideBar from "./SideBar";
@@ -11,9 +11,11 @@ const Properties = ({ userID }) => {
   const [properties, setProperties] = useState([]);
   const [alert, setAlert] = useState({ message: "", isSuccess: true });
 
+  // initial function that will get the properties from database to be rendered on homepage
+
   useEffect(() => {
     axios
-      .get("http://localhost:4000/api/v1/PropertyListing")
+      .get("https://surrealestatedatabase.herokuapp.com/api/v1/PropertyListing")
       .then((results) => {
         setProperties(results.data);
       })
@@ -25,10 +27,14 @@ const Properties = ({ userID }) => {
       });
   }, []);
 
+  // logic for potential function that will search property by name
+
   const { search } = useLocation();
   useEffect(() => {
     axios
-      .get(`http://localhost:4000/api/v1/PropertyListing${search}`)
+      .get(
+        `https://surrealestatedatabase.herokuapp.com/api/v1/PropertyListing${search}`
+      )
       .then((results) => setProperties(results.data))
       .catch(() => {
         setAlert({
@@ -41,18 +47,23 @@ const Properties = ({ userID }) => {
   if (alert.message) {
     return <Alert message={alert.message} success={alert.isSuccess} />;
   }
+
+  // function to save properties against user ID in separate section of database
+
   const handleSaveProperty = (propertyId) => {
-    axios.post("http://localhost:4000/api/v1/Favourite", {
+    axios.post("https://surrealestatedatabase.herokuapp.com/api/v1/Favourite", {
       propertyListing: propertyId,
       fbUserId: userID,
     });
   };
+
   return (
-    <section className="properties">
-      <div className="sidebar">
-        <SideBar />
-      </div>
-      <div className="propertyCards">
+    <div>
+      <div className="sidebar" />
+      <SideBar />
+      <div />
+      <div className="properties-page">
+        <h1 className="header_properties-page">View Current Properties</h1>
         {properties &&
           properties.map((property) => {
             return (
@@ -64,7 +75,7 @@ const Properties = ({ userID }) => {
                 type={property.type}
                 bathrooms={property.bathrooms}
                 bedrooms={property.bedrooms}
-                price={property.price}
+                price={Number(property.price)}
                 email={property.email}
                 onSaveProperty={handleSaveProperty}
                 propertyId={property._id}
@@ -72,7 +83,7 @@ const Properties = ({ userID }) => {
             );
           })}
       </div>
-    </section>
+    </div>
   );
 };
 

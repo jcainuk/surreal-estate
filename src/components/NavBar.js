@@ -1,57 +1,62 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../styles/NavBar.css";
-import FacebookLogin from "react-facebook-login";
-import PropTypes from "prop-types";
-import { FaFacebookSquare } from "react-icons/fa";
+// import FacebookLogin from "react-facebook-login/dist/facebook-login-render-props";
+// import PropTypes from "prop-types";
+import logo from "../images/logo.png";
 
-const NavBar = ({ onLogin, userID, onLogout }) => {
+const NavBar = () => {
   return (
     <div className="navbar">
-      <img src="/images/logo.png" alt="navbar-logo" />
-      <div className="navbar-menu">
-        <li>
-          <Link className="nav-links" to="/">
-            View Properties
-          </Link>
-        </li>
-        <li>
-          <Link className="nav-links" to="/AddProperty">
-            Add Property
-          </Link>
-        </li>
-        {userID ? (
-          <li>
-            <Link className="nav-links" to="/SavedProperties">
-              Saved Properties
-            </Link>
-          </li>
-        ) : (
-          " "
-        )}
-      </div>
+      <li>
+        <img src={logo} className="logo" alt="surreal-estate-logo" />
+      </li>
+      <li datatest-id="test-view-properties-link">
+        <Link className="link" to="/">
+          View Properties
+        </Link>
+      </li>
+      <li datatest-id="test-add-properties-link" className="navbar-links__item">
+        <Link className="link" to="/AddProperty">
+          Add Property
+        </Link>
+      </li>
 
+      {/* potential rendering of savedproperties page if user is signed in */}
+
+      {/* {/* {userID ? (
+        <li className="navbar-links__item">
+          <Link className="link" to="/SavedProperties">
+            Saved Properties
+          </Link>
+        </li>
+      ) : (
+        " "
+      )}
       {userID ? (
-        <button className="facebook" type="button" onClick={onLogout}>
-          <FaFacebookSquare />
-          Log out
+        <button className="facebook-logout" type="button" onClick={onLogout}>
+          SIGN OUT
         </button>
       ) : (
         <FacebookLogin
-          appId="442074327121841"
-          fields="name,email,picture"
+          appId="772892546664505"
           callback={onLogin}
-          cssClass="facebook"
-        />
-      )}
+          render={(renderProps) => (
+            <button
+              className="facebook-login"
+              type="button"
+              onClick={renderProps.onClick}
+            >
+              LOGIN WITH FACEBOOK
+            </button> */}
     </div>
   );
 };
 
-NavBar.propTypes = {
-  onLogin: PropTypes.func.isRequired,
-  userID: PropTypes.number.isRequired,
-  onLogout: PropTypes.func.isRequired,
-};
+// NavBar.propTypes = {
+//   onLogin: PropTypes.func.isRequired,
+//   userID: PropTypes.number.isRequired,
+//   onLogout: PropTypes.func.isRequired,
+// };
 
 export default NavBar;

@@ -1,54 +1,138 @@
-.navbar {
-  background: rgb(255, 255, 255);
-  height: 80px;
-  display:flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.2rem;
+@import url("https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&family=Cairo:wght@700&family=Dela+Gothic+One&family=Lato&family=Noto+Sans+TC:wght@700&display=swap");
 
+.logo {
+  height: 4em;
+  width: 10em;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  padding-top: 4%;
 }
-img {
-  height: 65px;
-  justify-self: start;
-  margin-left: 0px; 
-}
-.navbar-menu {
-  display: grid;
-  grid-template-columns: repeat(5, auto);
-  grid-gap: 20px;
-  list-style: none;
+
+.navbar {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   text-align: center;
-  width: 70vw;
-  justify-content: start;
-  margin-right: 2rem;
+  top: 0;
+  width: 100% !important;
+  height: 80px !important;
+  list-style-type: none;
+  font-family: "Lato", sans-serif;
+  text-decoration: none;
+  position: sticky;
 }
-.nav-links{
-  color: rgb(55, 52, 52);
-  font-size: 16px;
-  padding: 10px;
+
+.link {
+  text-decoration: none;
+  margin-right: 1%;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: black !important;
+}
+
+.navbar a:visited {
+  text-decoration: none;
+  color: black !important;
+}
+a:visited {
   text-decoration: none;
 }
-.nav-links:hover{
-  background-color: rgba(223, 223, 223, 0.782);
-  border-radius: 4px;
-  transition: all 0.2s ease out;
+.facebook-logout,
+.facebook-login {
+  align-items: center;
+  background-color: rgb(59, 89, 152);
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  display: flex;
+  margin-right: 2%;
+  height: 3em;
+  width: 10em;
+  font-family: Arial, sans-serif;
+  font-stretch: normal;
+  font-style: normal;
+  font-variant-caps: normal;
+  font-variant-east-asian: normal;
+  font-variant-ligatures: normal;
+  font-variant-numeric: normal;
+  font-weight: 400;
+  justify-content: center;
+  letter-spacing: normal;
+  line-height: normal;
+  text-align: center;
+  text-indent: 0;
+  text-rendering: auto;
+  text-shadow: none;
+  text-transform: none;
+  word-spacing: 0;
+  writing-mode: horizontal-tb;
+  -webkit-font-smoothing: antialiased;
 }
 
-.facebook {
-  width: 165px;
-  height:35px;  
-  border-radius: 4px;
-  background: #3b5998;
-  color:white;
-  border:0px transparent;  
-  text-align: center;
-  margin:5px;
-  display: inline-block;
-  cursor: pointer;
-  box-shadow: 0 8px 16px rgb(38 38 48 / 20%);
+@media only screen and (min-width: 751px) and (max-width: 1025px) {
+  .navbar {
+    text-align: center;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 0.8em;
+    height: 80px;
+  }
+  a:hover {
+    text-decoration: none;
+  }
+
+  .navbar a {
+    text-decoration: underline !important;
+  }
+
+  .facebook-logout,
+  .facebook-login {
+    height: 4em;
+    font-weight: 600;
+    font-size: 0.8em;
+    width: 12em;
+  }
+  .logo {
+    margin-left: 5%;
+  }
+  a:hover {
+    text-decoration: none;
+  }
 }
-.facebook:hover {
-background-color:  #396ad3;
-border-radius: 4px;
-transition: all 0.2s ease out;
+@media only screen and (max-width: 750px) {
+  .navbar {
+    justify-content: space-between;
+    font-size: 0.7em;
+    height: 6em;
+  }
+  .navbar a {
+    text-decoration: underline;
+  }
+  .link {
+    text-decoration: underline;
+  }
+
+  .facebook-logout,
+  .facebook-login {
+    height: 6em;
+    font-weight: 800;
+    font-size: 0.6em;
+    text-decoration: none;
+    width: 10em;
+    margin-top: 0.7%;
+    margin-right: 1px;
+    padding: 0;
+  }
+  .logo {
+    margin-left: 1px;
+    width: 7.5em;
+    height: 3em;
+  }
+  .navbar a:visited {
+    text-decoration: none;
+    color: black;
+  }
 }

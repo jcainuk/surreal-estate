@@ -1,89 +1,136 @@
-h1 {
-  color: rgb(66, 62, 62);
-  display: flex;
-  justify-content: center;
-  margin-top: 0px;
-  margin-bottom: 20px;
-  font-size: 50px;
-} 
+@import url("https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&family=Cairo:wght@700&family=Dela+Gothic+One&family=Lato&family=Noto+Sans+TC:wght@700&display=swap");
 
-h2 {
-  color: rgb(66, 62, 62);
-  display: flex-start;
-  justify-content: center;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  text-align: center;
-  font-size: 25px;
-} 
-
-.property {
-  display: flex;
-  justify-items: center;
-  
-}
 .addproperty {
-  background-color: rgb(255, 254, 254);
-  display: flex;
-  flex-direction: column;
-  box-shadow: 0 8px 16px rgb(38 38 48 / 20%);
-  margin: 50px;
-  margin-left: 150px;
-  margin-right: 150px;
-  padding: 80px;
-  padding-bottom: 10%;
-  padding-left: 15px;
-  padding-right: 10px;
-  font-size: 9px;
-  list-style-type: none;
-  border-radius: 8px;
-   
+  text-align: center;
+  background: url(../images/mansion.jpeg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  min-width: 100%;
+  min-height: 100vh;
 }
-.addproperty form {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-items: start;
-  text-align: justify;
-}
-.form-container{
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
-  padding: 0px;
-  background-color: rgb(232, 174, 232);
-  padding:10px;
-  height: 100%;
-  width: 600px;
-  border-radius: 8px;
-  box-shadow: 0 8px 16px rgb(38 38 48 / 20%);
 
+.header_addproperty {
+  color: white;
+  font-family: "Lato", sans-serif;
+  padding-bottom: 1%;
+  padding-top: 3%;
+  margin-block-start: 0;
 }
-.add-btn{
-  display: flex;
-  justify-items: center;
-  height:35px;  
-  border-radius: 4px;
-  background: #b462b8;
-  color:white;
-  border:0px transparent;  
-  
-  cursor: pointer;
+
+.add-property_form {
+  border: 1px solid white;
+  text-align: center;
+  padding: 5%;
+  margin-top: 1%;
+  margin-bottom: 5%;
+  width: 50%;
+  padding: 1em;
+  background-color: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.6);
+  -webkit-backdrop-filter: blur(15.5px);
+  border-radius: 1em;
+  color: black;
+  font-size: 3vmin;
+  font-family: "Lato", sans-serif;
   display: inline-block;
 }
-.add-btn:hover {
-background-color: rgba(189, 23, 235, 0.782);
-border-radius: 4px;
-transition: all 0.2s ease out;
-}
 
-.form-elements{ 
- 
-  margin: 10px;
- 
-}
-input {
-  height: 30px;
+.add-property_form label {
+  display: block;
+  font-family: "Lato", sans-serif;
   width: 100%;
+  margin: auto;
+  margin-bottom: 2%;
+  text-align: center;
+  border-radius: 25px;
 }
 
+.add-property_form input {
+  width: 48%;
+  margin-bottom: 2%;
+  text-align: center;
+  font-family: "Lato", sans-serif;
+  border-radius: 25px;
+}
+
+.add-property_form select {
+  width: 50%;
+  margin-bottom: 2%;
+  text-align: center;
+  font-family: "Lato", sans-serif;
+  border-radius: 25px;
+}
+
+.add-property-button {
+  font-family: "Lato", sans-serif;
+  padding: 1%;
+  border-radius: 25px;
+  width: 40%;
+  background-color: #12093b;
+  color: white;
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 751px) and (max-width: 1025px) {
+  .header_addproperty {
+    margin-bottom: 2%;
+    font-size: 2em;
+    padding-top: 4%;
+    margin-block-start: 0;
+  }
+
+  .add-property_form input {
+    width: 80%;
+    height: 2em;
+    margin-bottom: 2%;
+    margin-top: 2%;
+    font-size: 0.6em;
+  }
+  .add-property_form select {
+    margin-bottom: 2%;
+    margin-top: 2%;
+    width: 80%;
+    height: 2em;
+    font-size: 0.6em;
+    font-family: "Lato", sans-serif;
+    text-align: center;
+  }
+  .add-property-button {
+    margin-top: 2%;
+    margin-bottom: 1%;
+    width: 60%;
+    height: 2em;
+    font-size: 0.7em;
+  }
+}
+@media only screen and (max-width: 750px) {
+  .add-property_form {
+    width: 70%;
+    min-height: 80%;
+  }
+  .header_addproperty {
+    font-size: 1.7em;
+    padding-top: 7%;
+    margin-bottom: 3%;
+  }
+  .add-property_form input {
+    width: 70%;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    font-size: 1.2em;
+  }
+  .add-property_form select {
+    width: 70%;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    font-size: 1.2em;
+  }
+  .add-property-button {
+    font-size: 1.2em;
+    width: 60%;
+    margin-top: 3%;
+    margin-bottom: 3%;
+  }
+}

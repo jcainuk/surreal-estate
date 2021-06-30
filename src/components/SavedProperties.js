@@ -2,20 +2,19 @@ import React, { useEffect } from "react";
 import axios from "axios";
 import PropTypes from "prop-types";
 import PropertyCard from "./PropertyCard";
-import SideBar from "./SideBar";
 import "../styles/SavedProperties.css";
-import "../styles/SideBar.css";
+
+// potential logic for saving properties
 
 const SavedProperties = ({ userID, myProperties, setMyProperties }) => {
   const getFavourites = () => {
     return axios
       .get(
-        `http://localhost:4000/api/v1/Favourite?query={"fbUserId":"${userID}"}&populate=propertyListing`
+        `https://surrealestatedatabase.herokuapp.com/api/v1/Favourite?query={"fbUserId":"${userID}"}&populate=propertyListing`
       )
       .then((results) => {
         setMyProperties(results.data.filter((e) => e.propertyListing));
-      })
-      .catch((err) => console.error(err));
+      });
   };
 
   useEffect(() => {
@@ -24,18 +23,19 @@ const SavedProperties = ({ userID, myProperties, setMyProperties }) => {
 
   const handleDeleteProperty = (favouriteId) => {
     axios
-      .delete(`http://localhost:4000/api/v1/Favourite/${favouriteId}`, {
-        propertyListing: favouriteId,
-        fbUserId: userID,
-      })
+      .delete(
+        `https://surrealestatedatabase.herokuapp.com/api/v1/Favourite/${favouriteId}`,
+        {
+          propertyListing: favouriteId,
+          fbUserId: userID,
+        }
+      )
       .then(() => getFavourites());
   };
 
   return (
     <div className="saved-properties-page">
-      <div className="sidebar">
-        <SideBar />
-      </div>
+      <h1 className="header_saved-properties">Saved Properties</h1>
       <div className="saved-properties">
         {myProperties &&
           myProperties.map((property) => {
@@ -67,9 +67,10 @@ SavedProperties.defaultProps = {
 };
 
 SavedProperties.propTypes = {
-  userID: PropTypes.string.isRequired,
+  userID: PropTypes.number.isRequired,
   myProperties: PropTypes.arrayOf(PropTypes.any),
   setMyProperties: PropTypes.func.isRequired,
+  // savedProperties: PropTypes.arrayOf(PropTypes.any).isRequired,
 };
 
 export default SavedProperties;
