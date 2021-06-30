@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import axios from "axios";
 import PropertyCard from "./PropertyCard";
 import Alert from "./Alert";
+import SideBar from "./SideBar";
 import "../styles/Properties.css";
 
 const Properties = ({ userID }) => {
@@ -40,9 +41,17 @@ const Properties = ({ userID }) => {
   if (alert.message) {
     return <Alert message={alert.message} success={alert.isSuccess} />;
   }
-
+  const handleSaveProperty = (propertyId) => {
+    axios.post("http://localhost:4000/api/v1/Favourite", {
+      propertyListing: propertyId,
+      fbUserId: userID,
+    });
+  };
   return (
     <section className="properties">
+      <div className="sidebar">
+        <SideBar />
+      </div>
       <div className="propertyCards">
         {properties &&
           properties.map((property) => {
@@ -57,6 +66,7 @@ const Properties = ({ userID }) => {
                 bedrooms={property.bedrooms}
                 price={property.price}
                 email={property.email}
+                onSaveProperty={handleSaveProperty}
                 propertyId={property._id}
               />
             );
