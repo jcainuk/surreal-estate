@@ -14,8 +14,8 @@ const PropertyCard = (props) => {
     price,
     email,
     userID,
-    onSaveProperty,
-    onDeleteProperty,
+    // onSaveProperty,
+    // onDeleteProperty,
     myProperties,
     favouriteId,
   } = props;
@@ -54,7 +54,7 @@ const PropertyCard = (props) => {
         <button
           className="card-btn"
           type="button"
-          onClick={() => onSaveProperty(propertyId)}
+          // onClick={() => onSaveProperty(propertyId)}
         >
           Save
         </button>
@@ -64,7 +64,7 @@ const PropertyCard = (props) => {
           <button
             className="card-btn"
             type="button"
-            onClick={() => onDeleteProperty(favouriteId)}
+            // onClick={() => onDeleteProperty(favouriteId)}
           >
             Delete
           </button>
@@ -86,8 +86,8 @@ PropertyCard.propTypes = {
   city: PropTypes.string.isRequired,
   email: PropTypes.string.isRequired,
   userID: PropTypes.string.isRequired,
-  onSaveProperty: PropTypes.func.isRequired,
-  onDeleteProperty: PropTypes.func.isRequired,
+  // onSaveProperty: PropTypes.func.isRequired,
+  // onDeleteProperty: PropTypes.func.isRequired,
   propertyId: PropTypes.string.isRequired,
   myProperties: PropTypes.arrayOf(PropTypes.any),
   favouriteId: PropTypes.string.isRequired,

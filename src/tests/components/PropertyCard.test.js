@@ -1,6 +1,6 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import PropertyCard from "../components/PropertyCard";
+import PropertyCard from "../../components/PropertyCard";
 
 describe("Property Card", () => {
   const validProps = {
@@ -9,7 +9,7 @@ describe("Property Card", () => {
     userId: "1234",
     myProperties: [],
     favouriteId: "",
-    type: "Flat",
+    type: "Detached",
     bedrooms: 1,
     bathrooms: 1,
     price: 125000,
@@ -27,7 +27,7 @@ describe("Property Card", () => {
       expect(screen.getByText(/Beautiful Flat/i)).toBeInTheDocument();
     });
     test("type", () => {
-      expect(screen.getByText(/Flat/)).toBeInTheDocument();
+      expect(screen.getByText(/Detached/)).toBeInTheDocument();
     });
     test("price", () => {
       expect(screen.getByText(/125000/)).toBeInTheDocument();
